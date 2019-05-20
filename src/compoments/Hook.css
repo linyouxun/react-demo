@@ -1,0 +1,7 @@
+.btn {
+    display: inline-block;
+    height: 30px;
+    width: 50px;
+    /* background-color: lightgray; */
+    border: 1px solid lightgray
+}
