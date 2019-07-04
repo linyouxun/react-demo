@@ -8,4 +8,9 @@ export { default as BCom } from './BCom';
 export { default as CCom } from './CCom';
 export { default as DCom } from './DCom';
 
+
+// component purecomponent的区别
+export { default as E } from './E';
+export { default as EPure } from './EPure';
+
 export { default as Hook } from './Hook';
