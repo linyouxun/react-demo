@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+!/node_modules/react-dom/cjs/react-dom.development.js
 /.pnp
 .pnp.js
 

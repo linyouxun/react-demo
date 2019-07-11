@@ -5,26 +5,27 @@ import './App.css';
 class App extends React.Component {
   state = {
     count: 0,
+    inputValue: '',
     obj: {
       name: 'test'
     }
   }
   divRef = null;
-  constructor(props) {
-    super(props);
-    document.addEventListener('click', function(e) {
-      console.log('constructor', e)
-    }, true)
-    this.divRef = React.createRef();
-  }
+  // constructor(props) {
+  //   super(props);
+    // document.addEventListener('click', function(e) {
+    //   console.log('constructor', e)
+    // }, true)
+    // this.divRef = React.createRef();
+  // }
   componentWillUpdate() {
     console.log('componentWillUpdate', this.state)
   }
   componentDidMount() {
-    console.log(this.divRef);
-    this.divRef.current.addEventListener('click', function(e) {
-      console.log('divRef', e)
-    }, false)
+    // console.log(this.divRef);
+    // this.divRef.current.addEventListener('click', function(e) {
+    //   console.log('divRef', e)
+    // }, false)
     // this.setState({ count: this.state.count + 1 });
     // this.setState({ count: this.state.count + 1 });
   }
@@ -69,8 +70,14 @@ class App extends React.Component {
     console.log('clickBtn6', e)
   }
 
+  changeInput = (e) => {
+    this.setState({
+      inputValue: e.target.value
+    })
+  }
+
   render() {
-    const { count } = this.state;
+    const { count, inputValue } = this.state;
     // debugger
     // this.setState({
     //   count: 4
@@ -78,10 +85,12 @@ class App extends React.Component {
     //   console.log('log')
     // })
     return (
-      <div className="App" onClick={this.clickBtn} onClickCapture={this.clickBtn6}>
+      <div className="App">
         {count}
-        <div ref={this.divRef} onClick={this.clickBtn2} onClickCapture={this.clickBtn3}> click </div>
-        <div onClick={this.clickBtn4} onClickCapture={this.clickBtn5}> click2 </div>
+        {/* <div ref={this.divRef} onClick={this.clickBtn2} onClickCapture={this.clickBtn3}> click </div> */}
+        {inputValue}
+        {/* <div onClick={this.clickBtn4} onClickCapture={this.clickBtn5}> click2 </div> */}
+        <input onChange={this.changeInput}/>
         {/* <E obj={obj}>E</E> */}
         {/* <hr /> */}
         {/* <EPure obj={obj}>EPure</EPure> */}
