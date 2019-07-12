@@ -89,7 +89,7 @@ class App extends React.Component {
         {count}
         {/* <div ref={this.divRef} onClick={this.clickBtn2} onClickCapture={this.clickBtn3}> click </div> */}
         {inputValue}
-        {/* <div onClick={this.clickBtn4} onClickCapture={this.clickBtn5}> click2 </div> */}
+        <div onClick={this.clickBtn4} onClickCapture={this.clickBtn5}> click2 </div>
         <input onChange={this.changeInput}/>
         {/* <E obj={obj}>E</E> */}
         {/* <hr /> */}
