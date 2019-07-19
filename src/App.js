@@ -1,6 +1,9 @@
 import React from 'react';
-// import { E, EPure, Hook } from './compoments'
+import { E, EPure, Hook, ReduxA, ReduxB } from './compoments'
 import './App.css';
+
+import { Provider } from "react-redux";
+import store from "./store";
 
 class App extends React.Component {
   state = {
@@ -85,17 +88,21 @@ class App extends React.Component {
     //   console.log('log')
     // })
     return (
-      <div className="App">
-        {count}
-        {/* <div ref={this.divRef} onClick={this.clickBtn2} onClickCapture={this.clickBtn3}> click </div> */}
-        {inputValue}
-        <div onClick={this.clickBtn4} onClickCapture={this.clickBtn5}> click2 </div>
-        <input onChange={this.changeInput}/>
-        {/* <E obj={obj}>E</E> */}
-        {/* <hr /> */}
-        {/* <EPure obj={obj}>EPure</EPure> */}
-        {/* <Hook>hook</Hook> */}
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          {count}
+          {/* <div ref={this.divRef} onClick={this.clickBtn2} onClickCapture={this.clickBtn3}> click </div> */}
+          {inputValue}
+          <div onClick={this.clickBtn4} onClickCapture={this.clickBtn5}> click2 </div>
+          <input onChange={this.changeInput}/>
+          {/* <E obj={obj}>E</E> */}
+          {/* <hr /> */}
+          {/* <EPure obj={obj}>EPure</EPure> */}
+          {/* <Hook>hook</Hook> */}
+          <ReduxA/>
+          <ReduxB/>
+        </div>
+      </Provider>
     );
   }
 }

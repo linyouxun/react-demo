@@ -8,6 +8,10 @@ export { default as BCom } from './BCom';
 export { default as CCom } from './CCom';
 export { default as DCom } from './DCom';
 
+// redux
+export { default as ReduxA } from './ReduxA';
+export { default as ReduxB } from './ReduxB';
+
 
 // component purecomponent的区别
 export { default as E } from './E';
