@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { switchUser } from '../store/action'
+// import { switchUser } from '../store/action'
 
 class ReduxA extends React.Component {
     constructor() {
@@ -38,7 +38,7 @@ let mapDispatchToProps = (dispatch) => {
     debugger
     return ({
         dispatch,
-        setName: switchUser
+        // setName: switchUser
     })
 }
 

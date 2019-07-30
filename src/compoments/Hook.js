@@ -75,8 +75,8 @@ export default function HookTest({type}) {
         console.log(inputRef.current.value)
     }
 
-    let a = [1,2,3]
-    let value = a[3].toString()
+    // let a = [1,2,3]
+    // let value = a[3].toString()
     return <ErrorBoundary>
         <input ref={inputRef}/>
         {

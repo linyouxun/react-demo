@@ -1,3 +1,14 @@
-.todo-list {
-    
+.todo-list .list-item {
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #efefef;
+    cursor: pointer;
+}
+.todo-list .list-item .delete-btn:hover {
+    opacity: 1;
+}
+.todo-list .list-item .delete-btn {
+    display: inline-block;
+    color: red;
+    opacity: 0;
 }

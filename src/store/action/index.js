@@ -1,11 +1,17 @@
-import store from '../'
+// import store from '../'
+export const TODOLISTADD = 'todolist-add';
+export const TODOLISTCHANGE = 'todolist-change';
+export const TODOLISTDELETE = 'todolist-delete';
 
-export const switchUser = (data) => {
-    console.log("switchUser()",data);
-    return () => {
-        store.dispatch({
-            type: 'init',
-            ...data
-        })
-    }
-}
+export const todolistAdd = (value) => ({
+    type: TODOLISTADD,
+    value
+})
+export const todolistChange = (data) => ({
+    type: TODOLISTCHANGE,
+    data: data
+})
+export const todolistDelete = (index) => ({
+    type: TODOLISTDELETE,
+    index
+})
