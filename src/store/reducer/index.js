@@ -7,7 +7,7 @@ export function decorationDetailData(state = {name: 'init'}, action) {
     console.log(action);
     // return Immutable.merge(state, action.payload || {});
     // return state.merge(action.payload || {}, {deep: true});
-    if (action.type == 'name') {
+    if (action.type == 'init') {
         return {
             name: action.name
         }

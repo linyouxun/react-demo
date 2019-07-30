@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { switchUser } from '../store/action'
 
 class ReduxA extends React.Component {
     constructor() {
@@ -14,8 +15,14 @@ class ReduxA extends React.Component {
     }
     render() {
         console.log(this.props)
-        return <div onClick={this.dispatchA}>
+        return <div>
             ReduxA
+            <div onClick={this.dispatchA}>
+                dispatchA
+            </div>
+            <div onClick={this.props.setName({name: 'test'})}>
+                setName
+            </div>
             {this.props.children}
         </div>
     }
@@ -27,8 +34,12 @@ let mapStateToProps = (state) => ({
     // userInfo: {...state.redUserInfo}
 })
 
-let mapDispatchToProps = (dispatch) => ({
-    dispatch
-})
+let mapDispatchToProps = (dispatch) => {
+    debugger
+    return ({
+        dispatch,
+        setName: switchUser
+    })
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReduxA)

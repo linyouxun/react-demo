@@ -10,7 +10,8 @@ class ReduxB extends React.Component {
         console.log(this.props)
         return <div>
             ReduxB
-            {this.props.children}
+            {this.props.id}
+            {this.props.userName}
         </div>
     }
 }
@@ -18,10 +19,11 @@ class ReduxB extends React.Component {
 // export default ReduxA;
 //配置代码，通过connect将组件和store连接起来
 let mapStateToProps = (state) => {
-    console.log(state);
-    return ({
+    return {
+        id: '1',
+        userName: state[0].name
         // userInfo: {...state.redUserInfo}
-    })
+    }
 }
 
 let mapDispatchToProps = (dispatch) => ({

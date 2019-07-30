@@ -11,7 +11,7 @@ export { default as DCom } from './DCom';
 // redux
 export { default as ReduxA } from './ReduxA';
 export { default as ReduxB } from './ReduxB';
-
+export { default as TodoList } from './TodoList';
 
 // component purecomponent的区别
 export { default as E } from './E';
