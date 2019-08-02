@@ -6,16 +6,17 @@ class BCom extends React.Component {
         console.log('BCom')
     }
     componentDidMount() {
-        console.log('componentDidMount Bcom');
+        console.log('Bcom componentDidMount');
     }
     shouldComponentUpdate() {
-        console.log('shouldComponentUpdate Bcom');
+        console.log('Bcom shouldComponentUpdate');
         return true
     }
     componentWillUnmount() {
-        console.log('componentWillUnmount Bcom');
+        console.log('Bcom componentWillUnmount');
     }
     render() {
+        console.log('BCom render', this.props.data)
         return <div>
             BCom
             {this.props.children}

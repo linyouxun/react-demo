@@ -6,16 +6,17 @@ class ACom extends React.Component {
         console.log('ACom')
     }
     componentDidMount() {
-        console.log('componentDidMount Acom');
+        console.log('Acom componentDidMount');
     }
     shouldComponentUpdate() {
-        console.log('shouldComponentUpdate Acom');
-        return true
+        console.log('Acom shouldComponentUpdate');
+        return false
     }
     componentWillUnmount() {
-        console.log('componentWillUnmount Acom');
+        console.log('Acom componentWillUnmount');
     }
     render() {
+        console.log('ACom render')
         return <div>
             ACom
             {this.props.children}

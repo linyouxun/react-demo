@@ -6,13 +6,14 @@ class B extends React.PureComponent {
         console.log('B')
     }
     componentDidMount() {
-        console.log('componentDidMount B');
+        console.log('B componentDidMount');
     }
     componentWillUnmount() {
-        console.log('componentWillUnmount B');
+        console.log('B componentWillUnmount');
     }
     render() {
-        return <div>
+        console.log('B render')
+        return <div style={{border: '1px'}}>
             B
             {this.props.children}
         </div>
