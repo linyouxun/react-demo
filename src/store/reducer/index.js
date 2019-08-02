@@ -2,7 +2,7 @@
 // import { couter } from './index.redux';  //项目中需要的reducer
 // import { auth } from './Auth.redux';   //项目中需要的reducer
 // export default combineReducers({couter,auth})
-import {TODOLISTADD, TODOLISTCHANGE, TODOLISTDELETE} from '../action'
+import {TODOLISTGETLIST, TODOLISTADD, TODOLISTCHANGE, TODOLISTDELETE} from '../action'
 const defaultState = {name: 'init'}
 export function decorationDetailData(state = defaultState, action) {
     console.log(action);
@@ -24,6 +24,11 @@ const defaultToduListState = {
     ]
 }
 export function todoListState(state = defaultToduListState, action) {
+    if (action.type === TODOLISTGETLIST) {
+        const tmpState = JSON.parse(JSON.stringify(state));
+        tmpState.list = action.list;
+        return tmpState;
+    }
     if (action.type === TODOLISTADD) {
         const tmpState = JSON.parse(JSON.stringify(state));
         tmpState.list.push(action.value)

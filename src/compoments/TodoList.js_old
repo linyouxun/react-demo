@@ -1,7 +1,8 @@
 import React, { createRef } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import './TodoList.css'
+import store from '../store';
 import { todolistGetList, todolistGetList2, todolistAdd, todolistDelete } from '../store/action'
 
 const TodoListUI = ({todoListState, event, inputRef}) => {
@@ -27,31 +28,49 @@ class TodoList extends React.Component {
         this.inputChange = this.inputChange.bind(this);
         this.add = this.add.bind(this);
         this.delete = this.delete.bind(this);
+        const { decorationDetailData, todoListState } = store.getState();
+        this.state = {
+            decorationDetailData,
+            todoListState
+        }
         this.static = {
             inputValue: ''
         }
+        this.dispatch = store.dispatch;
         this.inputRef = createRef();
+        store.subscribe(this.storeChange)
     }
     inputChange(e) {
         this.static.inputValue = e.target.value;
     }
     storeChange(e) {
-        
+        const { todoListState } = store.getState();
+        this.setState({
+            todoListState
+        })
     }
     add() {
-        this.props.add(this.static.inputValue);
+        this.dispatch(todolistAdd(this.static.inputValue))
         this.static.inputValue = '';
         this.inputRef.current.value = '';
     }
     delete(e) {
         const { index } = e.target.dataset;
-        this.props.delete(index);
+        this.dispatch(todolistDelete(index))
     }
     componentDidMount() {
-        this.props.list();
+        const action = todolistGetList2();
+        this.dispatch(action)
+        // axios.get('http://47.106.174.88:8080/api/app/mock/24/test/api').then((res)=>{
+        //     if (res.data.code === 200) {
+        //         this.dispatch(todolistGetList(res.data.data.list))
+        //     } else {
+        //         this.dispatch(todolistGetList([]))
+        //     }
+        // })
     }
     render() {
-        const { todoListState } = this.props;
+        const { todoListState } = this.state;
         return <TodoListUI
             todoListState={todoListState}
             event={{
@@ -65,29 +84,5 @@ class TodoList extends React.Component {
 
 }
 
-const stateTpProps = (state) => {
-    return {
-        decorationDetailData: state.decorationDetailData,
-        todoListState: state.todoListState,
-    }
-}
-
-const dispatchTpProps = (dispatch) => {
-    return {
-        storeChange(e) {
-        
-        },
-        add(value) {
-            dispatch(todolistAdd(value))
-        },
-        delete(index) {
-            dispatch(todolistDelete(index))
-        },
-        list() {
-            dispatch(todolistGetList2())
-        }
-    }
-}
-
-TodoList = connect(stateTpProps, dispatchTpProps)(TodoList);
+// TodoList = connect(TodoList);
 export default TodoList
