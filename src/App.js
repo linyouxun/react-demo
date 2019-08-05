@@ -1,5 +1,5 @@
 import React from 'react';
-import { A, ACom, B, BCom } from './compoments'
+import { HookDemo } from './compoments'
 import './App.css';
 
 const TYPE = {
@@ -19,22 +19,10 @@ class App extends React.Component {
     })
   }
   render() {
-    const {list, type} = this.state;
+    // const {list, type} = this.state;
     return (
       <div className="App">
-        <A>
-          {/* {
-            list.map((item, index) => {
-              return <BCom key={Math.random() + ''} data={item}>{item}</BCom>
-            })
-          } */}
-
-          {type === TYPE.ONE ? <BCom data={'1'}>1</BCom> : null}
-          {type ? <BCom data={'2'}>2</BCom> : null}
-          {type ? <BCom data={'3'}>3</BCom> : null}
-        </A>
-        <B>
-        </B>
+        <HookDemo/>
         <div onClick={this.click}>change</div>
       </div>
     );

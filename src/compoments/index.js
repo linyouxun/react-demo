@@ -18,3 +18,4 @@ export { default as E } from './E';
 export { default as EPure } from './EPure';
 
 export { default as Hook } from './Hook';
+export { default as HookDemo } from './HookDemo';
