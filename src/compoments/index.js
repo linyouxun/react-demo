@@ -13,6 +13,10 @@ export { default as ReduxA } from './ReduxA';
 export { default as ReduxB } from './ReduxB';
 export { default as TodoList } from './TodoList';
 
+export { default as ReactDemoContext } from './ReactDemoContext';
+export { default as ContextDemo } from './ContextDemo';
+export { default as ContextDemoSub } from './ContextDemoSub';
+
 // component purecomponent的区别
 export { default as E } from './E';
 export { default as EPure } from './EPure';
