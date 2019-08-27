@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoList } from './compoments'
+import { F } from './compoments'
 import './App.css';
 
 import { Provider } from "react-redux";
@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <TodoList/>
+          <F/>
         </div>
       </Provider>
     );
